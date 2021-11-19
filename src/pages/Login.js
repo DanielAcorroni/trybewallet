@@ -85,7 +85,9 @@ class Login extends React.Component {
 
 Login.propTypes = {
   loginInfo: PropTypes.func.isRequired,
-  history: PropTypes.objectOf(PropTypes.string).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
 
 function mapDispatchToProps(dispatch) {
