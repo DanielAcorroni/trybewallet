@@ -8,6 +8,7 @@ import DescriptionInput from '../component/DescriptionInput';
 import CurrencyInput from '../component/CurrencyInput';
 import MethodInput from '../component/MethodInput';
 import TagInput from '../component/TagInput';
+import TableWallet from '../component/TableWallet';
 
 class Wallet extends React.Component {
   constructor() {
@@ -81,6 +82,7 @@ class Wallet extends React.Component {
           <CurrencyInput currency={ currency } handleChange={ this.handleChange } />
           <MethodInput method={ method } handleChange={ this.handleChange } />
           <TagInput tag={ tag } handleChange={ this.handleChange } />
+          <TableWallet />
           <button type="submit">Adicionar despesa</button>
         </form>
       </>
