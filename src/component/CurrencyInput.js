@@ -1,34 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 class CurrencyInput extends React.Component {
   render() {
+    const { currencies } = this.props;
     const { currency, handleChange } = this.props;
     return (
-      <select
-        data-testid="currency-input"
-        name="currency"
-        onChange={ handleChange }
-        value={ currency }
-        role="combobox"
-      >
-        <option value="USD">USD</option>
-        <option value="USDT">USDT</option>
-        <option value="CAD">CAD</option>
-        <option value="GBP">GBP</option>
-        <option value="ARS">ARS</option>
-        <option value="BTC">BTC</option>
-        <option value="LTC">LTC</option>
-        <option value="EUR">EUR</option>
-        <option value="JPY">JPY</option>
-        <option value="CHF">CHF</option>
-        <option value="AUD">AUD</option>
-        <option value="CNY">CNY</option>
-        <option value="ILS">ILS</option>
-        <option value="ETH">ETH</option>
-        <option value="XRP">XRP</option>
-        <option value="DOGE">DOGE</option>
-      </select>
+      <label htmlFor="currency">
+        Moeda:
+        <select
+          data-testid="currency-input"
+          name="currency"
+          id="currency"
+          onChange={ handleChange }
+          value={ currency }
+          role="combobox"
+        >
+          {
+            currencies.map((coin) => (
+              <option key={ coin } value={ coin }>{ coin }</option>
+            ))
+          }
+        </select>
+      </label>
     );
   }
 }
@@ -36,6 +31,14 @@ class CurrencyInput extends React.Component {
 CurrencyInput.propTypes = {
   currency: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
+  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default CurrencyInput;
+function mapStateToProps(state) {
+  const { wallet: { currencies } } = state;
+  return {
+    currencies,
+  };
+}
+
+export default connect(mapStateToProps, null)(CurrencyInput);
