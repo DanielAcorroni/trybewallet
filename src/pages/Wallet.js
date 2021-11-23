@@ -33,7 +33,7 @@ class Wallet extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { walletInfo, expenses, currencies, getCoinsAPI } = this.props;
+    const { walletInfo, expenses, getCoinsAPI, exchangeRates } = this.props;
     const { id,
       value,
       description,
@@ -47,7 +47,7 @@ class Wallet extends React.Component {
       currency,
       method,
       tag,
-      exchangeRates: currencies[0],
+      exchangeRates,
     };
     expenses.push(sendToDispatch);
     walletInfo(expenses);
@@ -90,7 +90,7 @@ class Wallet extends React.Component {
 
 Wallet.defaultProps = {
   expenses: [],
-  currencies: {},
+  exchangeRates: {},
 };
 
 Wallet.propTypes = {
@@ -98,15 +98,15 @@ Wallet.propTypes = {
   walletInfo: PropTypes.func.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.object),
   getCoinsAPI: PropTypes.func.isRequired,
-  currencies: PropTypes.arrayOf(PropTypes.object),
+  exchangeRates: PropTypes.objectOf(PropTypes.object),
 };
 
 function mapStateToProps(state) {
-  const { user: { email }, wallet: { expenses, currencies } } = state;
+  const { user: { email }, wallet: { expenses, exchangeRates } } = state;
   return {
     email,
     expenses,
-    currencies,
+    exchangeRates,
   };
 }
 
