@@ -7,7 +7,7 @@ class TableWallet extends React.Component {
     const { expenses } = this.props;
     return (
       <table>
-        <thead>
+        <thead id="table-head">
           <tr>
             <th>Valor convertido</th>
             <th>Moeda</th>
@@ -19,7 +19,7 @@ class TableWallet extends React.Component {
             <th>Editar/Excluir</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="table-body">
           {
             expenses.map((expense) => {
               console.log(expense);

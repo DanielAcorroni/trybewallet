@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { userAction } from '../actions';
+import trybeWalletLogo from '../assets/imgs/trybe-logo.png';
 
 class Login extends React.Component {
   constructor() {
@@ -53,31 +54,34 @@ class Login extends React.Component {
   render() {
     const { isButtonDisabled } = this.state;
     return (
-      <form onSubmit={ this.handleSubmit }>
-        <label htmlFor="input-email">
-          Email:
-          <input
-            type="email"
-            id="input-email"
-            data-testid="email-input"
-            name="email"
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-        <label htmlFor="input-password">
-          Senha:
-          <input
-            type="password"
-            id="input-password"
-            data-testid="password-input"
-            name="password"
-            minLength="6"
-            onChange={ this.handleChange }
-            required
-          />
-        </label>
-        <button type="submit" disabled={ isButtonDisabled }>Entrar</button>
+      <form onSubmit={ this.handleSubmit } id="login-form">
+        <div id="login-container">
+          <img src={ trybeWalletLogo } alt="Trybewallet logo" />
+          <label htmlFor="input-email" id="email-label">
+            Email:
+            <input
+              type="email"
+              id="input-email"
+              data-testid="email-input"
+              name="email"
+              onChange={ this.handleChange }
+              required
+            />
+          </label>
+          <label htmlFor="input-password" id="password-label">
+            Senha:
+            <input
+              type="password"
+              id="input-password"
+              data-testid="password-input"
+              name="password"
+              minLength="6"
+              onChange={ this.handleChange }
+              required
+            />
+          </label>
+          <button type="submit" disabled={ isButtonDisabled }>Entrar</button>
+        </div>
       </form>
     );
   }

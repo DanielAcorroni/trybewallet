@@ -6,6 +6,7 @@ class DescriptionInput extends React.Component {
     const { descript, handleChange } = this.props;
     return (
       <label htmlFor="description">
+        Descrição:
         <textarea
           data-testid="description-input"
           id="description"

@@ -6,6 +6,7 @@ class ValueInput extends React.Component {
     const { value, handleChange } = this.props;
     return (
       <label htmlFor="value">
+        Valor:
         <input
           type="number"
           data-testid="value-input"

@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#login-form {
+  background: linear-gradient(to left, black 25%, rgb(30, 105, 0) 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(37, 37, 37, 0.419);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#email-label, #password-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+#input-email, #input-password {
+  border-radius: 8px;
+  border: 0;
+}
+
+#login-container button {
+  border-radius: 8px;
+
+}
+
+#wallet-header {
+  background: linear-gradient(to left, black 25%, rgb(30, 105, 0) 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white;
+}
+
+#wallet-header div {
+  display: flex;
+  align-items: center;
+}
+
+form {
+  background-color: rgb(37, 37, 37);
+  padding: 10px;
+  height: 83.6vh;
+  color: white;
+}
+
+form label {
+  margin-right: 20px;
+}
+
+form label input, form label select, form label textarea {
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+form label textarea {
+  vertical-align: top;
+  height: 50px;
+  width: 250px;
+}
+
+form button {
+  border-radius: 8px;
+  border: 0;
+}
+
+form table {
+  margin-top: 40px;
+  background-color: rgba(2, 48, 21, 0.668);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+td, th {
+  padding: 10px;
+}

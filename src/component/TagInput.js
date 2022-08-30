@@ -5,13 +5,22 @@ class TagInput extends React.Component {
   render() {
     const { tag, handleChange } = this.props;
     return (
-      <select data-testid="tag-input" name="tag" onChange={ handleChange } value={ tag }>
-        <option value="Alimentação">Alimentação</option>
-        <option value="Lazer">Lazer</option>
-        <option value="Trabalho">Trabalho</option>
-        <option value="Transporte">Transporte</option>
-        <option value="Saúde">Saúde</option>
-      </select>
+      <label htmlFor="tag">
+        Tipo de gasto:
+        <select
+          data-testid="tag-input"
+          name="tag"
+          id="tag"
+          onChange={ handleChange }
+          value={ tag }
+        >
+          <option value="Alimentação">Alimentação</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Saúde">Saúde</option>
+        </select>
+      </label>
     );
   }
 }

@@ -5,16 +5,20 @@ class MethodInput extends React.Component {
   render() {
     const { method, handleChange } = this.props;
     return (
-      <select
-        data-testid="method-input"
-        name="method"
-        onChange={ handleChange }
-        value={ method }
-      >
-        <option value="Dinheiro">Dinheiro</option>
-        <option value="Cartão de crédito">Cartão de crédito</option>
-        <option value="Cartão de débito">Cartão de débito</option>
-      </select>
+      <label htmlFor="method">
+        Método de pagamento:
+        <select
+          data-testid="method-input"
+          name="method"
+          onChange={ handleChange }
+          value={ method }
+          id="method"
+        >
+          <option value="Dinheiro">Dinheiro</option>
+          <option value="Cartão de crédito">Cartão de crédito</option>
+          <option value="Cartão de débito">Cartão de débito</option>
+        </select>
+      </label>
     );
   }
 }
